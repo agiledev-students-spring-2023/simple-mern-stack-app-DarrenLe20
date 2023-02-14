@@ -1,0 +1,24 @@
+.self-intro {
+  text-align: left;
+}
+
+.self-img {
+  width: 300px;
+  border-radius: 5%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 20px;
+}
+
+.all-text {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
