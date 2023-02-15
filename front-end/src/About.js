@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
  */
 const About = props => {
   const [about_info, setAbout] = useState({})
-  const [imgFile, setImgFile] = useState('')
 
   // set up loading About data from back-end server when the component first loads
   useEffect(() => {
@@ -18,8 +17,6 @@ const About = props => {
         .then(response => response.json())
         .then(data => {
           setAbout(data)
-          setImgFile(data.img_src)
-          console.log(about_info.img_src)
         })
         .catch(err => {
           console.log(err)
