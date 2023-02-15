@@ -86,7 +86,8 @@ app.get('/about', (req, res) => {
     p2: 'I am proficient in Python, Java, C, and Javascript as well as being familiar with multiple frameworks like React and Flask. I have experience working as a front-end developer and am currently working on becoming a full-time data engineer post-graduation.',
     p3: 'In my free time, I enjoy playing video games, watching movies, and jogging. I also enjoy learning new things and am always open to new experiences.',
     p4: 'GitHub: https://github.com/DarrenLe20',
-    img_src: '../public/self_img.JPG',
+    img_src:
+      'https://media.licdn.com/dms/image/D5603AQHU2R5Odjlkkg/profile-displayphoto-shrink_800_800/0/1664848366224?e=1681948800&v=beta&t=hOAJYGNL3CZ2ihjdr2bziqUzwZ6MhUkWtDyT0wM-A4Y',
   })
 })
 
