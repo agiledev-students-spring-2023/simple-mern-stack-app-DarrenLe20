@@ -37,6 +37,7 @@ const About = props => {
           <p className="self-intro">{about_info.p2}</p>
           <p className="self-intro">{about_info.p3}</p>
           <p className="self-intro">{about_info.p4}</p>
+          <p className="self-intro">{about_info.p5}</p>
         </div>
         <img src={about_info.img_src} alt="selfie" className="self-img" />
       </div>
