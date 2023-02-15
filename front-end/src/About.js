@@ -1,6 +1,5 @@
 import './About.css'
-import self_img from './self_img.JPG'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 /**
  * A React component that renders the About page.
@@ -8,37 +7,36 @@ import { Link } from 'react-router-dom'
  * @returns The contents of this component, in JSX form
  */
 const About = props => {
+  const [about_info, setAbout] = useState({})
+
+  const fetchInfo = () => {
+    fetch(`${process.env.REACT_APP_SERVER_HOSTNAME}/about`)
+      .then(response => response.json())
+      .then(data => {
+        setAbout(data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  // set up loading About data from back-end server when the component first loads
+  useEffect(() => {
+    fetchInfo()
+  }, [])
+
   return (
     <>
       <h1>About Us</h1>
       <div className="container">
         <div className="all-text">
-          <p className="self-intro">
-            My name is Quoc Anh Le, or Darren Le, and I am currently a senior at
-            New York University majoring in Computer Science and Economics. I'm
-            an international student and aspiring software developer from
-            Vietnam and have been in the United States for 4 years, the first in
-            my family to go to a foreign university.
-          </p>
-
-          <p className="self-intro">
-            I am proficient in Python, Java, C, and Javascript as well as being
-            familiar with multiple frameworks like React and Flask. I have
-            experience working as a front-end developer and am currently working
-            on becoming a full-time data engineer post-graduation.
-          </p>
-
-          <p className="self-intro">
-            In my free time, I enjoy playing video games, watching movies, and
-            going jogging. I also enjoy learning new things and am always open
-            to new experiences.
-          </p>
-
-          <p className="self-intro">GitHub: https://github.com/DarrenLe20</p>
+          <p className="self-intro">{about_info.p1}</p>
+          <p className="self-intro">{about_info.p2}</p>
+          <p className="self-intro">{about_info.p3}</p>
+          <p className="self-intro">{about_info.p4}</p>
         </div>
-        <Link to="/">
-          <img src={self_img} alt="selfie" className="self-img" />
-        </Link>
+
+        <img src={about_info.img_src} alt="selfie" className="self-img" />
       </div>
     </>
   )

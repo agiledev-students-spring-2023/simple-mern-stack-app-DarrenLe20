@@ -78,5 +78,17 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// a route to provide "About US" text for the front-end
+app.get('/about', (req, res) => {
+  // send back some text as JSON
+  res.json({
+    p1: "My name is Quoc Anh Le, or Darren Le, and I am currently a senior at New York University majoring in Computer Science and Economics. I'm an international student and aspiring software developer from Vietnam and have been in the United States for 4 years, the first in my family to go to a foreign university.",
+    p2: 'I am proficient in Python, Java, C, and Javascript as well as being familiar with multiple frameworks like React and Flask. I have experience working as a front-end developer and am currently working on becoming a full-time data engineer post-graduation.',
+    p3: 'In my free time, I enjoy playing video games, watching movies, and jogging. I also enjoy learning new things and am always open to new experiences.',
+    p4: 'GitHub: https://github.com/DarrenLe20',
+    img_src: '../public/self_img.JPG',
+  })
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
